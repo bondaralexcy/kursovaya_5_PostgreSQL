@@ -3,6 +3,9 @@ import psycopg2
 from config import config
 
 class PGSManager(ABC):
+    """
+    Абстракный класс для работы с БД
+    """
     @abstractmethod
     def get_companies_and_vacancies_count(self):
         """
@@ -60,12 +63,12 @@ class DBManager(PGSManager):
                         cur.execute("SELECT * FROM companies")
                         cur.execute("SELECT * FROM vacancies")
                     except Exception as exp_no_tab:
-                        print(f'{exp_no_tab}. В базе данных отсутствуют рабочие таблицы')
+                        print(f'{exp_no_tab} В базе данных отсутствуют рабочие таблицы')
                         exit(1)
 
             conn.close()
         except Exception as exp:
-            print(f'{exp}. База данных {self.params} еще не созданa')
+            print(f'{exp} Надо создать базу данных "{self.database_name}"')
             exit(1)
         else:
             print(f'База данных {self.database_name} существует. Продолжаем работу.')

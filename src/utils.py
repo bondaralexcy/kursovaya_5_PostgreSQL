@@ -73,7 +73,7 @@ def create_db(database_name, params):
     connection.autocommit = True
 
     with connection.cursor() as cursor:
-        cursor.execute(f'DROP DATABASE {database_name}')
+        cursor.execute(f'DROP DATABASE IF EXISTS {database_name}')
         cursor.execute(f'CREATE DATABASE {database_name}')
 
     connection.close()

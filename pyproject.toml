@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "kursovaya-5-postgresql"
+version = "0.1.0"
+description = "Курсовая работа №5"
+authors = ["alexcy <bondaralexcy@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+idna = "^3.7"
+charset-normalizer = "^3.3.2"
+certifi = "^2024.2.2"
+urllib3 = "^2.2.1"
+psycopg2 = "^2.9.9"
+pytest = "^8.1.1"
+pytest-cov = "^5.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
